@@ -3,8 +3,11 @@ import React, { useState, useEffect } from "react";
 function Giphy() {
   const [post, setPost] = useState("");
   const [error, setError] = useState(null);
+  const [load, setLoad] = useState(false);
 
   const fetchPost = async () => {
+    setLoad(true);
+
     const uri = `https://api.giphy.com/v1/gifs/search?api_key=iInrXoDTJnWBPH41u1Pnfc09eGy7z29l&q=mood&limit=25&offset=0&rating=g&lang=en`;
 
     try {
